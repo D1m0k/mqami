@@ -5,6 +5,7 @@ requirements:
 import json
 import platform
 import time
+import os
 
 import paho.mqtt.client as mqtt
 
@@ -12,8 +13,8 @@ from asterisk.ami import EventListener, AMIClient, AutoReconnect
 from asterisk.ami.action import SimpleAction
 from settings import connection, login
 
-brokers = ['test-mosquitto.org', 'iot.eclipse.org']
-broker = brokers[1]
+
+broker = os.environ['MQTT_ADDRESS'],
 hostname = platform.node()
 
 
